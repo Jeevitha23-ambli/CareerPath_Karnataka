@@ -1,6 +1,5 @@
 // db/connection.js
 const mysql = require('mysql2/promise');
-const mysql = require('mysql2/promise');
 require('dotenv').config();
 
 const pool = mysql.createPool({
@@ -13,7 +12,9 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0,
     timezone: '+05:30'
-}); 
+});
+
+module.exports = pool;
 
 // Optional: Test connection
 async function testConnection() {
