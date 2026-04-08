@@ -4,8 +4,8 @@
 -- Usage: mysql -u root -p < schema.sql
 -- ============================================================
 
-CREATE DATABASE IF NOT EXISTS careerpath_karnatakafreshh CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE careerpath_karnatakafreshh;
+-- CREATE DATABASE IF NOT EXISTS careerpath_karnatakafreshh CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE railway;
 
 -- ===================== STREAMS =====================
 DROP TABLE IF EXISTS career_interests;
