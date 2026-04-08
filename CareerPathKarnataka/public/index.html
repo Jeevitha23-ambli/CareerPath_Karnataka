@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerPath Karnataka — Find Your Future</title>
+    <meta name="description" content="AI-powered career guidance for Karnataka students. Personalized roadmaps, college recommendations, and exam info." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-logo logo-link">
+                <span class="logo-icon">🎓</span>
+                <span>CareerPath <span style="color:var(--primary)">Karnataka</span></span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-link active" data-page="home">Home</button>
+                <button class="nav-link" data-page="guidance">Career Guidance</button>
+                <button class="nav-link" data-page="colleges">Colleges</button>
+                <button class="nav-link" data-page="exams">Exams</button>
+            </div>
+            <button class="nav-cta" data-page="guidance">Get Guidance →</button>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+     HOME PAGE
+     ============================================================ -->
+    <div class="page active" id="page-home">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content container">
+                <div class="hero-badge">🏆 Karnataka's #1 Career Guidance Platform After PUC</div>
+                <h1>Find Your Perfect <span>Career Path</span> in Karnataka</h1>
+                <p>Personalized career recommendations based on your interests. Real college data, live exam info, and step-by-step roadmaps.</p>
+                <div class="hero-buttons">
+                    <button class="btn-hero-primary" data-page="guidance">Start Career Guidance →</button>
+                    <button class="btn-hero-secondary" data-page="colleges">Explore Colleges</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">15+</span>
+                        <span class="hero-stat-label">Career Paths</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">30</span>
+                        <span class="hero-stat-label">Karnataka Districts</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">10+</span>
+                        <span class="hero-stat-label">Entrance Exams</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">Live</span>
+                        <span class="hero-stat-label">API Data</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Three simple steps to find your perfect career path After PUC</p>
+                </div>
+                <div class="how-grid">
+                    <div class="how-card">
+                        <div class="how-step">01</div>
+                        <div class="how-icon">🎓</div>
+                        <h3>Select Your Career Path</h3>
+                        <p>Choose from Engineering, Medical, Commerce, Law, Design, IT and more</p>
+                    </div>
+                    <div class="how-card">
+                        <div class="how-step">02</div>
+                        <div class="how-icon">💡</div>
+                        <h3>Pick Your Interests</h3>
+                        <p>Tell us what excites you — coding, medicine, finance, design, or more</p>
+                    </div>
+                    <div class="how-card">
+                        <div class="how-step">03</div>
+                        <div class="how-icon">🚀</div>
+                        <h3>Get Recommendations</h3>
+                        <p>Receive personalized careers, roadmaps, colleges from all 30 districts, and exam info</p>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:40px">
+                    <button class="btn-hero-primary" data-page="guidance" style="display:inline-flex;align-items:center;gap:8px">
+                        Start Career Guidance Now →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explore Careers -->
+        <section style="padding:80px 20px;background:#fff">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore Top Careers</h2>
+                    <p>Discover in-demand careers in Karnataka's growing economy</p>
+                </div>
+                <div id="explore-careers-grid"></div>
+                <div style="text-align:center;margin-top:32px">
+                    <button class="btn-hero-primary" data-page="guidance" style="display:inline-block">
+                        Get Personalized Recommendations →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- END HOME PAGE -->
+
+    <!-- ============================================================
+     GUIDANCE PAGE (WIZARD)
+     ============================================================ -->
+    <div class="page" id="page-guidance">
+        <div class="wizard-section">
+            <div class="wizard-container">
+
+                <!-- Progress Bar -->
+                <div class="progress-bar-wrap">
+                    <div class="progress-steps">
+                        <div class="p-step active" id="p-step-1">1</div>
+                        <div class="p-connector" id="p-conn-1"></div>
+                        <div class="p-step" id="p-step-2">2</div>
+                        <div class="p-connector" id="p-conn-2"></div>
+                        <div class="p-step" id="p-step-3">3</div>
+                    </div>
+                    <div class="progress-labels">
+                        <span class="active">Select Career</span>
+                        <span>Your Interests</span>
+                        <span>Results</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Career Path -->
+                <div class="wizard-step active" id="wizard-step-1">
+                    <div class="step-header">
+                        <h2>Select Your Career Path</h2>
+                        <p>Choose the career field you want to pursue after 10+2</p>
+                    </div>
+                    <div class="streams-grid" id="streams-grid"></div>
+                    <div class="wizard-nav">
+                        <div></div>
+                        <button class="btn-next" id="btn-step1-next" disabled>
+                            Next: Pick Interests →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Interests -->
+                <div class="wizard-step" id="wizard-step-2">
+                    <div class="step-header">
+                        <h2>What Are You Interested In?</h2>
+                        <p>Select all that interest you (optional — or skip to see all careers for your path)</p>
+                    </div>
+                    <div class="interests-grid" id="interests-grid"></div>
+                    <div class="wizard-nav">
+                        <button class="btn-back" id="btn-step2-back">← Back</button>
+                        <button class="btn-next" id="btn-step2-next">
+                            Get My Recommendations →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Results -->
+                <div class="wizard-step" id="wizard-step-3">
+                    <div id="results-container"></div>
+                    <div class="wizard-nav" style="margin-top:0">
+                        <button class="btn-back" id="btn-step3-back">← Change Interests</button>
+                        <div></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- END GUIDANCE PAGE -->
+
+    <!-- ============================================================
+     CAREER DETAIL PAGE
+     ============================================================ -->
+    <div class="page" id="page-career-detail">
+        <div class="detail-section">
+            <div class="detail-container">
+                <div id="career-detail-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     COLLEGES PAGE
+     ============================================================ -->
+    <div class="page" id="page-colleges">
+        <div class="page-header">
+            <div class="container">
+                <h1>🏛️ Colleges in Karnataka</h1>
+                <p>Curated DB colleges + live data via Overpass &amp; Nominatim APIs (Free)</p>
+            </div>
+        </div>
+
+        <!-- career dropdown + district + search -->
+        <div class="filters-bar">
+            <div class="filters-inner">
+                <select class="filter-select" id="filter-career">
+                    <option value="">All Career Paths</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="medical">Medical &amp; Health Sciences</option>
+                    <option value="commerce">Commerce &amp; Management</option>
+                    <option value="arts">Arts &amp; Humanities</option>
+                    <option value="law">Law</option>
+                    <option value="design">Design &amp; Architecture</option>
+                    <option value="cs">Computer Science / IT</option>
+                    <option value="emerging">Emerging Technologies (AI, Data Science)</option>
+                </select>
+                <select class="filter-select" id="filter-district">
+                    <option value="">All Districts</option>
+                    <option value="Bengaluru Urban">Bengaluru Urban</option>
+                    <option value="Mysuru">Mysuru</option>
+                    <option value="Dakshina Kannada">Dakshina Kannada</option>
+                    <option value="Dharwad">Dharwad</option>
+                    <option value="Belagavi">Belagavi</option>
+                    <option value="Kalaburagi">Kalaburagi</option>
+                    <option value="Davanagere">Davanagere</option>
+                    <option value="Shivamogga">Shivamogga</option>
+                    <option value="Tumakuru">Tumakuru</option>
+                    <option value="Udupi">Udupi</option>
+                    <option value="Hassan">Hassan</option>
+                    <option value="Mandya">Mandya</option>
+                    <option value="Vijayapura">Vijayapura</option>
+                    <option value="Bidar">Bidar</option>
+                    <option value="Raichur">Raichur</option>
+                    <option value="Koppal">Koppal</option>
+                    <option value="Gadag">Gadag</option>
+                    <option value="Haveri">Haveri</option>
+                    <option value="Uttara Kannada">Uttara Kannada</option>
+                    <option value="Chikkamagaluru">Chikkamagaluru</option>
+                    <option value="Chitradurga">Chitradurga</option>
+                    <option value="Kolar">Kolar</option>
+                    <option value="Chikballapur">Chikballapur</option>
+                    <option value="Ramanagara">Ramanagara</option>
+                    <option value="Chamarajanagar">Chamarajanagar</option>
+                    <option value="Yadgir">Yadgir</option>
+                    <option value="Bagalkot">Bagalkot</option>
+                    <option value="Ballari">Ballari</option>
+                    <option value="Kodagu">Kodagu</option>
+                    <option value="Bengaluru Rural">Bengaluru Rural</option>
+                </select>
+                <input class="filter-input" id="filter-search" type="text" placeholder="Search colleges..." />
+                <button class="filter-btn" id="btn-apply-filters">🔍 Search</button>
+            </div>
+        </div>
+
+        <div class="data-stats-bar">
+            <div class="data-stats-inner" id="colleges-stats">
+                <span class="data-stat-item" style="color:var(--gray-400)">Loading data sources...</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="colleges-content">
+                <div class="loading-container">
+                    <div class="spinner"></div>
+                    <p class="loading-text">Loading colleges...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END COLLEGES PAGE -->
+
+    <!-- ============================================================
+     EXAMS PAGE
+     ============================================================ -->
+    <div class="page" id="page-exams">
+        <div class="page-header">
+            <div class="container">
+                <h1>📋 Entrance Exams</h1>
+                <p>National, State, and Professional entrance exams for Karnataka students</p>
+            </div>
+        </div>
+
+        <div class="filters-bar">
+            <div class="filters-inner">
+                <select class="filter-select" id="exams-filter-stream">
+                    <option value="">All Career Paths</option>
+                    <option value="1">Engineering</option>
+                    <option value="2">Medical &amp; Health Sciences</option>
+                    <option value="3">Commerce &amp; Management</option>
+                    <option value="4">Arts &amp; Humanities / Law</option>
+                    <option value="5">Computer Science / IT / Emerging Tech</option>
+                </select>
+                <select class="filter-select" id="exams-filter-type">
+                    <option value="">All Types</option>
+                    <option value="National">National</option>
+                    <option value="State">State</option>
+                    <option value="Professional">Professional</option>
+                    <option value="University">University</option>
+                </select>
+                <input class="filter-input" id="exams-filter-search" type="text" placeholder="Search exams..." />
+                <button class="filter-btn" id="btn-apply-exam-filters">🔍 Search</button>
+            </div>
+        </div>
+
+        <div id="exams-content">
+            <div class="loading-container">
+                <div class="spinner"></div>
+                <p class="loading-text">Loading exams...</p>
+            </div>
+        </div>
+    </div>
+    <!-- END EXAMS PAGE -->
+
+    <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div>
+                    <div class="footer-logo">🎓 CareerPath Karnataka</div>
+                    <div class="footer-tagline">Empowering Karnataka students with personalized career guidance</div>
+                </div>
+                <div class="footer-links">
+                    <button class="footer-link" data-page="home">Home</button>
+                    <button class="footer-link" data-page="guidance">Career Guidance</button>
+                    <button class="footer-link" data-page="colleges">Colleges</button>
+                    <button class="footer-link" data-page="exams">Exams</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 CareerPath Karnataka. Data from MySQL DB + OpenStreetMap APIs. For educational purposes.
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>

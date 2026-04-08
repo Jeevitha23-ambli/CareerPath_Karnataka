@@ -1,0 +1,132 @@
+# CareerPath Karnataka 🎓
+
+**Full-Stack Career Guidance System** — Node.js + Express + MySQL + Vanilla JS + External APIs
+
+---
+
+## 🏗️ Architecture
+
+```
+LIVE DATA EXPANSION MODEL
+MySQL (base/curated data)  ──┐
+                              ├──► MERGE → API Response → Frontend
+Google Places API (live)   ──┘
+NTA Exam API (live enrichment)
+```
+
+## 📁 Project Structure
+
+```
+careerpath-karnataka/
+├── server.js                  # Express entry point
+├── package.json
+├── .env.example               # Copy to .env and fill in keys
+├── schema.sql                 # MySQL schema + seed data
+│
+├── db/
+│   └── connection.js          # MySQL pool connection
+│
+├── routes/
+│   ├── colleges.js            # GET /api/colleges (DB + Google Places)
+│   ├── exams.js               # GET /api/exams-live (DB + enrichment)
+│   └── recommend.js           # POST /api/recommend + GET /api/careers, streams, interests
+│
+└── public/
+    ├── index.html             # SPA shell - all pages
+    ├── css/style.css          # Modern responsive CSS
+    └── js/app.js              # Vanilla JS — routing, API calls, rendering
+```
+
+## 🚀 Quick Setup
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Configure Environment
+```bash
+cp .env.example .env
+# Edit .env with your MySQL credentials and API keys
+```
+
+### 3. Create Database & Load Schema
+```bash
+mysql -u root -p < schema.sql
+```
+
+### 4. Start Server
+```bash
+npm start
+# or for dev with auto-restart:
+npm run dev
+```
+
+### 5. Open Browser
+```
+http://localhost:3000
+```
+
+---
+
+## 🌐 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/streams` | All streams from DB |
+| GET | `/api/interests?stream_id=1` | Interests for stream |
+| GET | `/api/careers?stream_id=1` | Careers from DB |
+| GET | `/api/careers/:id` | Career detail with skills + roadmap |
+| POST | `/api/recommend` | Personalized recommendations |
+| GET | `/api/colleges` | DB + Google Places merged |
+| GET | `/api/exams-live` | DB exams + live enrichment |
+| GET | `/api/health` | Server health check |
+
+---
+
+## 🔑 API Keys
+
+### Google Places API (for live college expansion)
+1. Go to [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+2. Create a new project or select existing
+3. Enable **Places API (New)**
+4. Create an API key
+5. Add to `.env` as `GOOGLE_PLACES_API_KEY`
+
+> **Without API key:** System falls back to DB-only data. App still fully works.
+
+---
+
+## 🗄️ Database Schema
+
+| Table | Purpose |
+|-------|---------|
+| `streams` | 5 streams (PCM, PCB, Commerce, Arts, Emerging) |
+| `interests` | 22 interest categories |
+| `careers` | 15+ careers with metadata |
+| `roadmap_steps` | Step-by-step roadmaps per career |
+| `skills` | Career-specific skills (not generic) |
+| `colleges` | 8+ curated Karnataka colleges |
+| `exams` | 10 entrance exams |
+
+---
+
+## ✨ Features
+
+- **🔀 Live Data Expansion**: DB colleges merged with Google Places API results
+- **🤖 Smart Recommendations**: Filter by stream + interests from MySQL
+- **🗺️ Career Roadmaps**: Category-specific (Engineering 4yr / Medical 5.5yr / Commerce / Arts / Emerging)
+- **🎯 Unique Skills**: Career-specific skill sets from DB, no generic reuse
+- **⚡ Graceful Degradation**: If any API fails → DB data only, UI never breaks
+- **📱 Responsive**: Works on mobile, tablet, desktop
+- **🔍 Live Filtering**: Colleges and exams filterable by stream, district, type
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend**: Node.js + Express.js
+- **Database**: MySQL (via mysql2)
+- **HTTP Client**: Axios (for external APIs)
+- **Frontend**: HTML5 + CSS3 + Vanilla JavaScript (SPA)
+- **External APIs**: Google Places API, NTA Exam API (placeholder)
